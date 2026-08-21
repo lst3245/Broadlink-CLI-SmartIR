@@ -4,7 +4,7 @@ import json
 import broadlink
 import logging
 from helpers import async_learn, validateNumber
-from typing import List, Union
+from typing import List
 import questionary
 
 
@@ -32,7 +32,7 @@ class ClimateFanModes(Enum):
 
 
 class ClimateDevice:
-    def __init__(self, device: Union[broadlink.rm4pro, broadlink.rm4mini], manufacturer: str, supportedModels: List[str], logger: logging.Logger):
+    def __init__(self, device: broadlink.rmmini, manufacturer: str, supportedModels: List[str], logger: logging.Logger):
         self.device = device
         self.tempMin = self._promptTemperature('Minimum')
         self.tempMax = self._promptTemperature('Maximum')
