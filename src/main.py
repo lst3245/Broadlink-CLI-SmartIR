@@ -6,7 +6,7 @@ from typing import List
 from climate import ClimateDevice
 from fan import FanDevice
 from media import MediaDevice
-from helpers import DeviceType
+from helpers import DeviceType, isSupportedRemote
 import questionary
 import os
 
@@ -43,8 +43,8 @@ def showAndSelectDevice(devices: List[broadlink.Device]) -> broadlink.Device:
     # Fetch the device from the hashmap
     device = deviceIpToDevice[selectedDeviceIp]
 
-    # Currently only support RM4 Pro + RM4 Mini
-    if 'rm4' not in device.model.lower():
+    # RM4 Pro, RM4 Mini, RM mini 3, and other IR-capable RM remotes
+    if not isSupportedRemote(device):
         print(f'Invalid Device - {device.model} is not supported')
         exit()
 

@@ -12,6 +12,15 @@ class DeviceType(Enum):
     FAN = 3
 
 
+# python-broadlink maps every IR-capable RM remote to rmmini or a subclass:
+# RM mini 3 (rmmini / rmminib), RM4 Mini, RM4 Pro, RM Pro, etc.
+SUPPORTED_REMOTE_TYPES = (broadlink.rmmini,)
+
+
+def isSupportedRemote(device: broadlink.Device) -> bool:
+    return isinstance(device, SUPPORTED_REMOTE_TYPES)
+
+
 def async_learn(device: broadlink.Device):
     device.enter_learning()
     start = time.time()

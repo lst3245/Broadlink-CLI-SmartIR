@@ -4,7 +4,7 @@ import json
 import broadlink
 import logging
 from helpers import async_learn
-from typing import List, Union
+from typing import List
 import questionary
 
 
@@ -19,7 +19,7 @@ class MediaCommands(Enum):
 
 
 class MediaDevice:
-    def __init__(self, device: Union[broadlink.rm4pro, broadlink.rm4mini], manufacturer: str, supportedModels: List[str], logger: logging.Logger):
+    def __init__(self, device: broadlink.rmmini, manufacturer: str, supportedModels: List[str], logger: logging.Logger):
         self.device = device
         self.sources = self._promptMediaSources()
         self.logger = logger

@@ -1,6 +1,6 @@
 # Broadlink CLI - SmartIR
 
-Use your Broadlink RM4 Pro and RM4 Mini to easily learn codes to control Climate, Fan and Media devices. Easily be walked through the process of learning each of the codes, while getting a json output that is compatible with [SmartIR](https://github.com/smartHomeHub/SmartIR) & [Home Assistant](https://www.home-assistant.io/).
+Use your Broadlink RM4 Pro, RM4 Mini, or RM mini 3 to easily learn codes to control Climate, Fan and Media devices. Easily be walked through the process of learning each of the codes, while getting a json output that is compatible with [SmartIR](https://github.com/smartHomeHub/SmartIR) & [Home Assistant](https://www.home-assistant.io/).
 
 Check out the demo, you'll see how easy it is.
 
